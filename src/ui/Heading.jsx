@@ -12,7 +12,6 @@ const Heading = styled.h1`
     css`
       font-size: 3rem;
       font-weight: 600;
-      background-color: yellow;
       margin-bottom: 10px;
     `}
 
@@ -21,7 +20,6 @@ const Heading = styled.h1`
     css`
       font-size: 2rem;
       font-weight: 600;
-      background-color: blue;
       margin-bottom: 10px;
     `}
 
@@ -30,7 +28,6 @@ const Heading = styled.h1`
     css`
       font-size: 2rem;
       font-weight: 500;
-      background-color: lightgreen;
       margin-bottom: 10px;
     `}
 `;
