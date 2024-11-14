@@ -1,8 +1,3 @@
-# React + Vite
+# THE GREEN HORIZONS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Green Horizons project is a hotel management app for employees, featuring user authentication, cabin management, booking tracking, and guest information. Future updates will include online booking for guests, allowing public reservations and expanding the app's functionality for both internal and external users.
