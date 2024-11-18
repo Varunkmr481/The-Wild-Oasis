@@ -36,7 +36,7 @@ function CabinTable() {
     error,
   } = useQuery({
     // uniquely identifies data, can be used to fetch data in any comp
-    queryKey: ["cabin"],
+    queryKey: ["cabins"],
 
     // fn for data fetching
     queryFn: getCabins,
