@@ -20,6 +20,6 @@ export async function deleteCabin(id) {
 
   if (error) {
     console.log(error);
-    throw new error("Cabin could not be deleted");
+    throw new Error("Cabin could not be deleted");
   }
 }
