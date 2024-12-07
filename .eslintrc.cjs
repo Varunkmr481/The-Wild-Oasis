@@ -18,6 +18,6 @@ module.exports = {
     ],
     "no-unused-vars": "warn",
     "no-undef": "error",
-    "react/prop-types": "warn",
+    "react/prop-types": "off",
   },
 };
