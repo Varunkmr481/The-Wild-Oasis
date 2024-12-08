@@ -6,7 +6,7 @@ function useCreateCabin() {
   const queryClient = useQueryClient();
 
   const { mutate: createCabin, isLoading: isCreating } = useMutation({
-    // same as createCabin
+    // same as createCabin, newCabin is obj
     mutationFn: (newCabin) => createEditCabin(newCabin),
     onSuccess: () => {
       toast.success("New cabin created successfully!");
