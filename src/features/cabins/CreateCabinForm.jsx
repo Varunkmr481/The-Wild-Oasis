@@ -1,5 +1,3 @@
-import { useMutation, useQueryClient } from "@tanstack/react-query";
-import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
 import Input from "../../ui/Input";
@@ -9,7 +7,8 @@ import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";
 
-import { createEditCabin } from "../../services/apiCabins";
+import useCreateCabin from "./feature-hooks/useCreateCabin";
+import useEditCabin from "./feature-hooks/useEditCabin";
 
 function CreateCabinForm({ cabinToEdit = {} }) {
   const { id: editId, ...editValues } = cabinToEdit;
@@ -19,46 +18,44 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   const { register, handleSubmit, reset, getValues, formState } = useForm({
     defaultValues: isEditSession ? editValues : {},
   });
+  // extract errors
   const { errors } = formState;
   // console.log("formState : ", errors);
 
-  const queryClient = useQueryClient();
+  // custom hooks
+  const { isCreating, createCabin } = useCreateCabin();
+  const { isEditing, editCabin } = useEditCabin();
 
-  const { mutate: createCabin, isLoading: isCreating } = useMutation({
-    // same as createCabin
-    mutationFn: (newCabin) => createEditCabin(newCabin),
-    onSuccess: () => {
-      toast.success("New cabin created successfully!");
-      queryClient.invalidateQueries({ queryKey: ["cabins"] });
-      reset();
-    },
-    onError: (err) => {
-      toast.error(err.message);
-    },
-  });
-
-  const { mutate: editCabin, isLoading: isEditing } = useMutation({
-    // same as createCabin
-    mutationFn: ({ newCabin, id }) => createEditCabin(newCabin, id),
-    onSuccess: () => {
-      toast.success("Cabin succesfully edited!");
-      queryClient.invalidateQueries({ queryKey: ["cabins"] });
-      reset();
-    },
-    onError: (err) => {
-      toast.error(err.message);
-    },
-  });
-
+  // combine loading
   const isWorking = isCreating || isEditing;
 
   function onSubmit(data) {
     const image = typeof data.image === "string" ? data.image : data.image[0];
 
-    if (isEditSession) editCabin({ newCabin: { ...data, image }, id: editId });
-    else createCabin({ ...data, image: image });
+    if (isEditSession)
+      editCabin(
+        { newCabin: { ...data, image }, id: editId },
+        {
+          onSuccess: (data) => {
+            reset();
+          },
+        }
+      );
+    else
+      createCabin(
+        { ...data, image: image },
+        {
+          // onsuccess can be defined on mutation fn like this
+          // it also gets the access to data
+          onSuccess: (data) => {
+            // console.log("data cmng frm onSuccess opts for mutation fn");
+            // console.log(data);
+            reset();
+          },
+        }
+      );
 
-    console.log({ ...data, image: image });
+    // console.log({ ...data, image: image });
     // console.log("image type", typeof image);
   }
 
