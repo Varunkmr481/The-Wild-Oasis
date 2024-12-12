@@ -1,9 +1,80 @@
-# THE WILD OASIS
+<div align="center">
 
-1. The Wild Oasis project is a hotel management app for employees, featuring user authentication, cabin management, booking tracking, and guest information.
-2. Future updates will include online booking for guests, allowing public reservations and expanding the app's functionality for both internal and external users.
+# 🌴 **The Wild Oasis** 🌴
 
-## FEATURES
+![logo-light](https://github.com/user-attachments/assets/430a3615-04a1-4657-abfe-b79bc80e8493)
 
-1. Employees are able to create, read, update, delete the cabins information and the pictures according to the company's requirement.
-2. Admin/employees can decide the maximum length duration for booking a cabin, maximum price for the breakfast
+🚧 **Current Status**: *Under Development* 🚧
+
+---
+
+**The Wild Oasis** is a hotel management app designed to streamline employee operations and enhance guest experiences.
+
+</div>
+
+---
+
+## 📌 **Project Description**
+
+The Wild Oasis project is a comprehensive hotel management system for employees, featuring:
+- **User Authentication**: Secure access for admins and employees.
+- **Cabin Management**: Easily manage cabins with the ability to add, edit, and remove details.
+- **Booking Tracking**: Stay updated with all bookings in real-time.
+- **Guest Information Management**: Seamless handling of guest details.
+
+### 🔮 **Future Updates**
+- **Online Booking for Guests**: Enable public reservations, allowing external users to book directly.
+- **Expanded Functionality**: Additional tools and features to improve both internal and external user experience.
+
+---
+
+## ✨ **Features**
+
+### 🏠 **Cabin Management**
+- Employees can **create, read, update, and delete** cabin information and images.
+- Adjust cabin details to align with the company’s requirements.
+
+### 📅 **Booking Rules**
+- Admins can set:
+  - Maximum booking duration for a cabin.
+  - Maximum price for breakfast.
+
+---
+
+## 🛠️ **Technologies Used**
+- **Frontend**: React.js
+- **Backend**: Supabase
+- **Database**: Supabase(postgres Sql)
+- **Authentication**: -
+
+---
+
+## 🚀 **Getting Started**
+
+### 📦 **Installation**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/wild-oasis.git
+   ```
+2. Install dependencies:
+   ```bash
+   cd wild-oasis
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+## 🛡️ **Acknowledgments**
+
+This project is being developed by following the course **"React - The Complete Guide"** by Jonas Schmedtmann on [Udemy](https://www.udemy.com/).
+
+---
+
+<div align="center">
+
+Made with ❤️ while learning from **Jonas Schmedtmann**
+
+</div>
+
