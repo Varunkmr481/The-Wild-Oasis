@@ -10,7 +10,7 @@ import FormRow from "../../ui/FormRow";
 import useCreateCabin from "./feature-hooks/useCreateCabin";
 import useEditCabin from "./feature-hooks/useEditCabin";
 
-function CreateCabinForm({ cabinToEdit = {} }) {
+function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   const { id: editId, ...editValues } = cabinToEdit;
   const isEditSession = Boolean(editId);
 
@@ -38,6 +38,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
         {
           onSuccess: (data) => {
             reset();
+            onCloseModal?.();
           },
         }
       );
@@ -51,6 +52,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
             // console.log("data cmng frm onSuccess opts for mutation fn");
             // console.log(data);
             reset();
+            onCloseModal?.();
           },
         }
       );
@@ -65,7 +67,10 @@ function CreateCabinForm({ cabinToEdit = {} }) {
 
   return (
     // if error in validation the second fn will be called not onSubmit
-    <Form onSubmit={handleSubmit(onSubmit, onError)}>
+    <Form
+      onSubmit={handleSubmit(onSubmit, onError)}
+      type={onCloseModal ? "modal" : "regular"}
+    >
       <FormRow label="Cabin name" error={errors?.name?.message}>
         <Input
           type="text"
@@ -155,7 +160,11 @@ function CreateCabinForm({ cabinToEdit = {} }) {
 
       <FormRow>
         {/* type is an HTML attribute! */}
-        <Button variation="secondary" type="reset">
+        <Button
+          variation="secondary"
+          type="reset"
+          onClick={() => onCloseModal?.()}
+        >
           Cancel
         </Button>
         <Button disabled={isWorking}>
