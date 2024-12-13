@@ -5,5 +5,5 @@
 
 ## FEATURES
 
-1. Employees are able to create, read, update, delete the cabins information and the pictures of the cabin according to the company's requirement.
+1. Employees are able to create, read, update, delete the cabins information and the pictures according to the company's requirement.
 2. Admin/employees can decide the maximum length duration for booking a cabin, maximum price for the breakfast
