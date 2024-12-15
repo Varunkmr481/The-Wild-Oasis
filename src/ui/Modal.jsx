@@ -1,11 +1,4 @@
-import {
-  cloneElement,
-  createContext,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { cloneElement, createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
@@ -85,26 +78,7 @@ function Open({ children, opens: opensWindowName }) {
 
 function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext);
-  const { ref } = useDetectOutsideClick({ close, event: "click" });
-  // const ref = useRef();
-
-  // useEffect(
-  //   function () {
-  //     function handleClick(e) {
-  //       // contains : true if ref.current(StyledModal) it contains the e.target(yr click)
-  //       if (ref.current && !ref.current.contains(e.target)) {
-  //         console.log("clicked outside");
-  //         close();
-  //       }
-  //     }
-
-  //     document.addEventListener("click", handleClick, true);
-
-  //     return () =>
-  //       document.removeEventListener("click", (e) => handleClick(e), true);
-  //   },
-  //   [close]
-  // );
+  const { ref } = useDetectOutsideClick(close, "click");
 
   if (name !== openName) return null;
 
