@@ -62,6 +62,7 @@ const Empty = styled.p`
 
 const TableContext = createContext();
 
+// CabinTable
 function Table({ children, columns }) {
   return (
     <TableContext.Provider value={{ columns }}>
@@ -70,6 +71,7 @@ function Table({ children, columns }) {
   );
 }
 
+// CabinTable
 function Header({ children }) {
   const { columns } = useContext(TableContext);
   console.log(typeof columns);
@@ -80,6 +82,8 @@ function Header({ children }) {
     </StyledHeader>
   );
 }
+
+// CabinRow
 function Row({ children }) {
   const { columns } = useContext(TableContext);
 
@@ -89,7 +93,13 @@ function Row({ children }) {
     </StyledRow>
   );
 }
-function Body({ children }) {}
+
+// CabinTable
+function Body({ data, render }) {
+  if (!data.length) return <Empty>No data to show at the moment</Empty>;
+
+  return <StyledBody>{data.map(render)}</StyledBody>;
+}
 
 Table.Header = Header;
 Table.Row = Row;
