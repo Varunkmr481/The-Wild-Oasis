@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 const StyledFilter = styled.div`
@@ -33,3 +35,35 @@ const FilterButton = styled.button`
     color: var(--color-brand-50);
   }
 `;
+
+function Filter({ filterField, options }) {
+  // A convenient wrapper for reading and writing search parameters via the URLSearchParams interface.
+  // url m state update => component re-R
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // filterField : 'discount', value : 'all', 'with-discount', 'no-discount'
+  const currentFilter = searchParams.get(filterField) || options[0].value;
+
+  function handleClick(value) {
+    // searchParams object ke andar value ko update karta hai
+    searchParams.set(filterField, value);
+    // updated searchParams object ko URL mein push karta hai
+    setSearchParams(searchParams);
+  }
+
+  return (
+    <StyledFilter>
+      {options.map((option) => (
+        <FilterButton
+          active={currentFilter === options.value ? "active" : ""}
+          onClick={() => handleClick(option.value)}
+          key={option.value}
+        >
+          {option.label}
+        </FilterButton>
+      ))}
+    </StyledFilter>
+  );
+}
+
+export default Filter;

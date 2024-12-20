@@ -73,7 +73,7 @@ function Table({ children, columns }) {
 // CabinTable
 function Header({ children }) {
   const { columns } = useContext(TableContext);
-  console.log(typeof columns);
+  // console.log(typeof columns);
 
   return (
     <StyledHeader role="row" columns={columns} as="header">
