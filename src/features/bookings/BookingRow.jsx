@@ -35,6 +35,7 @@ const Amount = styled.div`
 `;
 
 function BookingRow({
+  // destructure incoming data : booking
   booking: {
     id: bookingId,
     created_at,
