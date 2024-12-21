@@ -16,6 +16,10 @@
 
 ---
 
+Here’s the updated **Markdown** content incorporating the new features you implemented:
+
+---
+
 ## 📌 **Project Description**
 
 The Wild Oasis project is a comprehensive hotel management system for employees, featuring:
@@ -25,11 +29,6 @@ The Wild Oasis project is a comprehensive hotel management system for employees,
 - **Booking Tracking**: Stay updated with all bookings in real-time.
 - **Guest Information Management**: Seamless handling of guest details.
 
-<!-- ### 🔮 **Future Updates**
-
-- **Online Booking for Guests**: Enable public reservations, allowing external users to book directly.
-- **Expanded Functionality**: Additional tools and features to improve both internal and external user experience. -->
-
 ---
 
 ## ✨ **Features**
@@ -38,6 +37,15 @@ The Wild Oasis project is a comprehensive hotel management system for employees,
 
 - Employees can **create, read, update, and delete** cabin information and images.
 - Adjust cabin details to align with the company’s requirements.
+- **Filter Cabins**:
+  - View cabins **with discounts**, **without discounts**, or **all cabins**.
+- **Sort Cabins**:
+  - **By Name**: Ascending and descending order.
+  - **By Capacity**: Ascending and descending order.
+  - **By Price**: Ascending and descending order.
+  - **By Discount**: Ascending and descending order.
+
+---
 
 ### 📅 **Booking Rules**
 
@@ -47,6 +55,11 @@ The Wild Oasis project is a comprehensive hotel management system for employees,
   - Maximum price for breakfast.
 
 ---
+
+<!-- ### 🔮 **Future Updates**
+
+- **Online Booking for Guests**: Enable public reservations, allowing external users to book directly.
+- **Expanded Functionality**: Additional tools and features to improve both internal and external user experience. -->
 
 ## 🛠️ **Technologies Used**
 
