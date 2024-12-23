@@ -6,7 +6,6 @@ import Spinner from "../../ui/Spinner";
 import { useBookingsData } from "./feature-hooks/useBookingsData";
 
 function BookingTable() {
-  // const bookings = [];
   const { isLoading, bookings } = useBookingsData();
 
   if (isLoading) return <Spinner />;
