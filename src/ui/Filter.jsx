@@ -47,6 +47,9 @@ function Filter({ filterField, options }) {
   function handleClick(value) {
     // searchParams object ke andar value ko update karta hai
     searchParams.set(filterField, value);
+    if (searchParams.get("page")) {
+      searchParams.set("page", 1);
+    }
     // updated searchParams object ko URL mein push karta hai
     setSearchParams(searchParams);
   }

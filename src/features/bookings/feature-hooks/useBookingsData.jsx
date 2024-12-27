@@ -37,7 +37,6 @@ export function useBookingsData() {
   const count = queryData?.count || 0;
 
   // PRE-FETCHING
-
   const pageCount = Math.ceil(count / PAGE_SIZE);
 
   if (page < pageCount)

@@ -16,13 +16,7 @@
 
 ---
 
-Here’s the updated **Markdown** content incorporating the new features you implemented:
-
----
-
 ## 📌 **Project Description**
-
-The Wild Oasis project is a comprehensive hotel management system for employees, featuring:
 
 - **User Authentication**: Secure access for admins and employees.
 - **Cabin Management**: Easily manage cabins with the ability to add, edit, and remove details.
