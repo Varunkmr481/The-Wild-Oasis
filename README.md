@@ -33,26 +33,39 @@ The Wild Oasis project is a comprehensive hotel management system for employees,
 
 ## ✨ **Features**
 
-### 🏠 **Cabin Management**
+## 🏠 **Cabin Management**
 
-- Employees can **create, read, update, and delete** cabin information and images.
-- Adjust cabin details to align with the company’s requirements.
+- Employees can **create, read, update, and delete** cabin information, including images.
+- Adjust cabin details to meet company requirements effectively.
 - **Filter Cabins**:
-  - View cabins **with discounts**, **without discounts**, or **all cabins**.
+  - View cabins by status: **with discounts**, **without discounts**, or **all cabins**.
 - **Sort Cabins**:
-  - **By Name**: Ascending and descending order.
-  - **By Capacity**: Ascending and descending order.
-  - **By Price**: Ascending and descending order.
-  - **By Discount**: Ascending and descending order.
+  - **By Name**: Ascending or descending order.
+  - **By Capacity**: Ascending or descending order.
+  - **By Price**: Ascending or descending order.
+  - **By Discount**: Ascending or descending order.
 
 ---
 
-### 📅 **Booking Rules**
+## 🔖 **Booking Management**
 
-- Admins can set:
-  - Maximum guests per booking.
-  - Maximum nights per booking.
-  - Maximum price for breakfast.
+- **Filter Bookings**:
+  - View bookings based on status: **all**, **checked out**, **checked in**, or **unconfirmed**.
+- **Sort Bookings**:
+  - **By Date**: Ascending (earliest first) or descending (latest first).
+  - **By Amount**: Ascending (lowest first) or descending (highest first).
+- **Pagination**: Seamlessly navigate through bookings with paginated results.
+- **Check-In Booking**: Streamlined process to check in guests.
+- **Add Optional Breakfast**: Include breakfast as an optional add-on for bookings.
+
+---
+
+## 📅 **Booking Rules**
+
+- Admins can configure the following booking rules:
+  - Maximum guests allowed per booking.
+  - Maximum nights permitted for a booking.
+  - Maximum price set for breakfast.
 
 ---
 
@@ -63,7 +76,7 @@ The Wild Oasis project is a comprehensive hotel management system for employees,
 
 ## 🛠️ **Technologies Used**
 
-- **Frontend**: React.js
+- **Frontend**: React.js, Context API, React Router, React Query, React Hook Form, Styled Components, React Icons, React Hot Toast
 - **Backend**: Supabase
 - **Database**: Supabase(Postgres Sql)
 - **Authentication**: -
