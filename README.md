@@ -51,6 +51,12 @@
 - **Pagination**: Seamlessly navigate through bookings with paginated results.
 - **Check-In Booking**: Streamlined process to check in guests.
 - **Add Optional Breakfast**: Include breakfast as an optional add-on for bookings.
+- **Delete Booking** : Delete booking
+
+<!-- Self build feat's
+1. edit form for booking (name, email)
+2. create new booking form (name, email, cabinName, status .... amount calculate hoga apne aap)
+-->
 
 ---
 
