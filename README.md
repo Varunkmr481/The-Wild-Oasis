@@ -56,6 +56,7 @@
 <!-- Self build feat's
 1. edit form for booking (name, email)
 2. create new booking form (name, email, cabinName, status .... amount calculate hoga apne aap)
+3. add other authentication options also like google, apple, (user, provider, authentication)
 -->
 
 ---
