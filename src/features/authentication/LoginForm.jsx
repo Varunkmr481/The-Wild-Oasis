@@ -10,7 +10,7 @@ import { useLogin } from "./feature-hooks/useLogin";
 
 function LoginForm() {
   const [email, setEmail] = useState("varun@example.com");
-  const [password, setPassword] = useState("password");
+  const [password, setPassword] = useState("pass@1234");
   const { login, isLoggingIn } = useLogin();
 
   // user details are stored in user table under authentication
@@ -18,7 +18,15 @@ function LoginForm() {
     e.preventDefault();
 
     if (!email || !password) return;
-    login({ email, password });
+    login(
+      { email, password },
+      {
+        onSettled: () => {
+          setEmail("");
+          setPassword("");
+        },
+      }
+    );
   }
 
   return (
