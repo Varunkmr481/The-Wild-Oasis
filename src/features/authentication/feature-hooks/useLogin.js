@@ -17,7 +17,7 @@ export function useLogin() {
       // manually set data in cache
       queryClient.setQueriesData(["user"], user);
       toast.success("You have successfully logged in");
-      navigate("/");
+      navigate("/", { replace: true });
     },
 
     // log error
