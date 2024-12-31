@@ -15,7 +15,8 @@ export function useLogin() {
       console.log(user);
 
       // manually set data in cache
-      queryClient.setQueriesData(["user"], user);
+      queryClient.setQueryData(["user"], user.user);
+
       toast.success("You have successfully logged in");
       navigate("/", { replace: true });
     },
