@@ -36,7 +36,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
       editCabin(
         { newCabin: { ...data, image }, id: editId },
         {
-          onSuccess: (data) => {
+          onSuccess: () => {
             reset();
             onCloseModal?.();
           },
@@ -48,7 +48,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
         {
           // onsuccess can be defined on mutation fn like this
           // it also gets the access to data
-          onSuccess: (data) => {
+          onSuccess: () => {
             // console.log("data cmng frm onSuccess opts for mutation fn");
             // console.log(data);
             reset();

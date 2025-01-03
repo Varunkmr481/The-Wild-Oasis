@@ -8,17 +8,16 @@ import Menus from "../../ui/Menus";
 import { formatCurrency } from "../../utils/helpers";
 import { formatDistanceFromNow } from "../../utils/helpers";
 import {
-  HiArrowDownCircle,
   HiArrowDownOnSquare,
   HiArrowUpOnSquare,
   HiEye,
   HiTrash,
 } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+
 import { useCheckout } from "../check-in-out/feature-hooks/useCheckout";
 import useDeleteBooking from "./feature-hooks/useDeleteBooking";
-import { deleteBooking } from "../../services/apiBookings";
+
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 
@@ -53,11 +52,9 @@ function BookingRow({
   // destructure incoming data : booking
   booking: {
     id: bookingId,
-    created_at,
     startDate,
     endDate,
     numNights,
-    numGuests,
     totalPrice,
     status,
     guests: { fullName: guestName, email },

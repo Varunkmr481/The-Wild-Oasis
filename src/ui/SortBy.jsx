@@ -1,6 +1,5 @@
 import { useSearchParams } from "react-router-dom";
 import Select from "./Select";
-import { useState } from "react";
 
 function SortBy({ options }) {
   const [searchParams, setSearchParams] = useSearchParams();

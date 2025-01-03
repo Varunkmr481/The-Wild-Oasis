@@ -3,7 +3,6 @@ import { useUser } from "../features/authentication/feature-hooks/useUser";
 // import { getLoggedInUser } from "../services/apiAuth";
 import Spinner from "../ui/Spinner";
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
 import { useEffect } from "react";
 
 const FullPage = styled.div`
@@ -19,7 +18,7 @@ function ProtectedRoute({ children }) {
   const navigate = useNavigate();
 
   // 1. Load the authenticated user
-  const { user, isLoading, isAuthenticated } = useUser();
+  const { isLoading, isAuthenticated } = useUser();
 
   // 2. If there is no authenticated user, redirect to /login
   useEffect(

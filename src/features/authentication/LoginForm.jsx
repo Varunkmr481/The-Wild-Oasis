@@ -9,8 +9,8 @@ import FormRowVertical from "../../ui/FormRowVertical";
 import { useLogin } from "./feature-hooks/useLogin";
 
 function LoginForm() {
-  const [email, setEmail] = useState("varun@example.com");
-  const [password, setPassword] = useState("pass@1234");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const { login, isLoggingIn } = useLogin();
 
   // user details are stored in user table under authentication

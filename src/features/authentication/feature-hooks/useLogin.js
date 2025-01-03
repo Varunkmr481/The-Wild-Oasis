@@ -12,7 +12,7 @@ export function useLogin() {
 
     // success handler receive data returned by mutation fn
     onSuccess: (user) => {
-      console.log(user);
+      // console.log(user);
 
       // manually set data in cache
       queryClient.setQueryData(["user"], user.user);
@@ -23,7 +23,7 @@ export function useLogin() {
 
     // log error
     onError: (err) => {
-      console.log("ERR : ", err);
+      // console.log("ERR : ", err);
       toast.error(err.message);
     },
   });
