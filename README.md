@@ -49,15 +49,22 @@
   - **By Date**: Ascending (earliest first) or descending (latest first).
   - **By Amount**: Ascending (lowest first) or descending (highest first).
 - **Pagination**: Seamlessly navigate through bookings with paginated results.
-- **Check-In Booking**: Streamlined process to check in guests.
-- **Add Optional Breakfast**: Include breakfast as an optional add-on for bookings.
-- **Delete Booking** : Delete booking
+- **Check-In & Check-Out Booking**: Streamlined process to check in & check out guests.
+- **Optional Add-Ons:**: Add breakfasts or extras to bookings effortlessly.
+- **Delete Bookings** : Remove outdated or canceled bookings with a single click.
+
+## 🔏 **Authentication & Authorisation**
+
+- **Employee signup**: Existing employee can sign up new employees.
+- **Logout & Logout** : Employees can securely log in and out using email and password.
+- **Account Updates:** : Employees can edit their profile details, including photos, names, and passwords.
 
 <!-- Self build feat's
 1. edit form for booking (name, email)
 2. create new booking form (name, email, cabinName, status .... amount calculate hoga apne aap)
 3. add other authentication options also like google, apple, (user, provider, authentication)
 -->
+<!-- 4. Create a table where the employees can be managed -->
 
 ---
 
