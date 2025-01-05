@@ -82,6 +82,12 @@
 - **Online Booking for Guests**: Enable public reservations, allowing external users to book directly.
 - **Expanded Functionality**: Additional tools and features to improve both internal and external user experience. -->
 
+## ☕ **Dark Mode**
+
+- Toggle Dark Mode: Users can switch between light and dark themes for an enhanced user experience.
+
+---
+
 ## 🛠️ **Technologies Used**
 
 - **Frontend**: React.js, Context API, React Router, React Query, React Hook Form, Styled Components, React Icons, React Hot Toast
