@@ -4,7 +4,7 @@ import { useRecentStays } from "./feature-hooks/useRecentStays";
 import useCabinsData from "../cabins/feature-hooks/useCabinsData";
 import Spinner from "../../ui/Spinner";
 import Stats from "./Stats";
-import { useSearchParams } from "react-router-dom";
+import SalesChart from "./SalesChart";
 
 const StyledDashboardLayout = styled.div`
   display: grid;
@@ -14,9 +14,8 @@ const StyledDashboardLayout = styled.div`
 `;
 
 function DashboardLayout() {
-  const [searchParams] = useSearchParams();
   const { bookings, numDays, isLoading: isLoading1 } = useRecentBookings();
-  const { stays, confirmedStays, isLoading: isLoading2 } = useRecentStays();
+  const { confirmedStays, isLoading: isLoading2 } = useRecentStays();
   const { cabins, isLoading: isLoading3 } = useCabinsData();
 
   if (isLoading1 || isLoading2 || isLoading3) return <Spinner />;
@@ -33,7 +32,7 @@ function DashboardLayout() {
       ></Stats>
       <div>Today&apos;s activity</div>
       <div>Chart stay durations</div>
-      <div>Chart sales</div>
+      <SalesChart bookings={bookings} numDays={numDays} />
     </StyledDashboardLayout>
   );
 }
