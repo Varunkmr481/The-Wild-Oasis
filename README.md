@@ -6,11 +6,25 @@
 
 ---
 
-🚧 **Current Status**: _Under Development_ 🚧
+## ✨ [Live Demo](https://my-wild-oasis-hub.netlify.app/)✨
+
+<p align="center">
+  <strong>Experience the future of hotel management</strong><br>
+  👉 <a href="https://my-wild-oasis-hub.netlify.app/">Try the live demo</a> 👈
+</p>
+
+<!--<p align="center">-->
+<!--    <img src="public/demo-preview.png" alt="Demo Preview" width="600"/>-->
+<!--</p>-->
+
+### Demo Credentials
+
+📧 Email: `demo1@demo1.com`  
+🔑 Password: `demo@1234`
 
 ---
 
-**The Wild Oasis** is a hotel management app designed to streamline employee operations and enhance guest experiences.
+🚧 **Current Status**: _Under Development_ 🚧
 
 </div>
 
@@ -50,23 +64,14 @@
   - **By Amount**: Ascending (lowest first) or descending (highest first).
 - **Pagination**: Seamlessly navigate through bookings with paginated results.
 - **Check-In & Check-Out Booking**: Streamlined process to check in & check out guests.
-- **Optional Add-Ons:**: Add breakfasts or extras to bookings effortlessly.
-- **Delete Bookings** : Remove outdated or canceled bookings with a single click.
+- **Optional Add-Ons**: Add breakfasts or extras to bookings effortlessly.
+- **Delete Bookings**: Remove outdated or canceled bookings with a single click.
 
-## 🔏 **Authentication & Authorisation**
+## 🔏 **Authentication & Authorization**
 
 - **Employee signup**: Existing employee can sign up new employees.
-- **Logout & Logout** : Employees can securely log in and out using email and password.
-- **Account Updates:** : Employees can edit their profile details, including photos, names, and passwords.
-
-<!-- Self build feat's
-1. edit form for booking (name, email)
-2. create new booking form (name, email, cabinName, status .... amount calculate hoga apne aap)
-3. add other authentication options also like google, apple, (user, provider, authentication)
--->
-<!-- 4. Create a table where the employees can be managed -->
-
----
+- **Login & Logout**: Employees can securely log in and out using email and password.
+- **Account Updates**: Employees can edit their profile details, including photos, names, and passwords.
 
 ## 📅 **Booking Rules**
 
@@ -77,11 +82,6 @@
 
 ---
 
-<!-- ### 🔮 **Future Updates**
-
-- **Online Booking for Guests**: Enable public reservations, allowing external users to book directly.
-- **Expanded Functionality**: Additional tools and features to improve both internal and external user experience. -->
-
 ## ☕ **Dark Mode**
 
 - Toggle Dark Mode: Users can switch between light and dark themes for an enhanced user experience.
@@ -90,10 +90,10 @@
 
 ## 🛠️ **Technologies Used**
 
-- **Frontend**: React.js, Context API, React Router, React Query, React Hook Form, Styled Components, React Icons, React Hot Toast
+- **Frontend**: React.js, Context API, React Router, React Query, React Hook Form, Styled Components, React Icons, React Hot Toast, ErrorBoundary
 - **Backend**: Supabase
-- **Database**: Supabase(Postgres Sql)
-- **Authentication**: -
+- **Database**: Supabase (PostgreSQL)
+- **Deployment**: Netlify
 
 ---
 
@@ -102,24 +102,29 @@
 ### 📦 **Installation**
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/your-username/wild-oasis.git
+   git clone https://github.com/Varunkmr481/The-Wild-Oasis.git
    ```
+
 2. Install dependencies:
    ```bash
    cd wild-oasis
    npm install
    ```
 3. Start the development server:
+
    ```bash
-   npm start
+   npm run dev
    ```
+
+4. Open [http://localhost:5173](http://localhost:5173) to view it in your browser
 
 ---
 
 ## 🛡️ **Acknowledgments**
 
-This project is being developed in one of the courses by Jonas Schmedtmann on [Udemy](https://www.udemy.com/).
+This project is being developed in one of the Jonas Schmedtmann's course on [Udemy](https://www.udemy.com/).
 
 ---
 
