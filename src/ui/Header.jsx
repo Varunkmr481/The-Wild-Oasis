@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import HeaderMenu from "./HeaderMenu";
 import UserAvatar from "../features/authentication/UserAvatar";
+import { Link, useNavigate } from "react-router-dom";
+import ButtonIcon from "./ButtonIcon";
 
 const StyledHeader = styled.header`
   background-color: var(--color-grey-0);
@@ -14,9 +16,14 @@ const StyledHeader = styled.header`
 `;
 
 function Header() {
+  const navigate = useNavigate();
+
   return (
     <StyledHeader>
-      <UserAvatar />
+      <ButtonIcon onClick={() => navigate("/account")}>
+        <UserAvatar />
+      </ButtonIcon>
+
       <HeaderMenu />
     </StyledHeader>
   );
