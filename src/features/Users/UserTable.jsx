@@ -1,13 +1,12 @@
 import { format } from "date-fns";
+
 import Menus from "../../ui/Menus";
 import Table from "../../ui/Table";
-import styled from "styled-components";
-import { HiEye } from "react-icons/hi";
-import { HiEllipsisVertical } from "react-icons/hi2";
+import Spinner from "../../ui/Spinner";
+import Empty from "../../ui/Empty";
 
-const StyledDiv = styled.div`
-  font-size: 14px;
-`;
+import UserRow from "./UserRow";
+import useUsersData from "./useUsersData";
 
 const fakeEmployees = [
   {
@@ -52,12 +51,24 @@ const fakeEmployees = [
   },
 ];
 
-function EmployeeTable() {
+function UserTable() {
+  const { isLoading, users, error } = useUsersData();
+
+  if (isLoading) return <Spinner />;
+  if (!users?.length) return <Empty resourceName="Users" />;
+
+  console.log(users);
+  // console.log(users[0].email);
+  // console.log(users[0].user_metadata.fullName);
+  // console.log(users[0].created_at);
+  // console.log(format(new Date(users[0].last_sign_in_at), "do MMMM yyyy"));
+
   return (
     <Menus>
       {/* <Table columns="1fr 1.3fr 1.3fr 1.8fr 1.8fr 0.5fr"> */}
-      <Table columns="1.4fr 2.4fr 2.4fr 1.4fr 3.2rem">
+      <Table columns="1.4fr 2.4fr 2.4fr 2.4fr 3.3rem">
         <Table.Header>
+          {/* <div></div> */}
           <div>Name</div>
           <div>Created at</div>
           <div>Last signin</div>
@@ -65,26 +76,13 @@ function EmployeeTable() {
           <div></div>
         </Table.Header>
 
-        {/* <Table.Body data={fakeEmployees} render={()=>}></Table.Body> */}
-
-        {fakeEmployees.map((emp) => (
-          <Table.Row key={emp.id}>
-            <StyledDiv>{emp.name}</StyledDiv>
-            <StyledDiv>
-              {format(new Date(emp.createdAt), "do MMMM yyyy")}
-            </StyledDiv>
-            <StyledDiv>
-              {format(new Date(emp.lastSignIn), "do MMMM yyyy")}
-            </StyledDiv>
-            <StyledDiv>{emp.email}</StyledDiv>
-            <StyledDiv>
-              <HiEllipsisVertical />
-            </StyledDiv>
-          </Table.Row>
-        ))}
+        <Table.Body
+          data={users}
+          render={(user) => <UserRow user={user} key={user.id} />}
+        ></Table.Body>
       </Table>
     </Menus>
   );
 }
 
-export default EmployeeTable;
+export default UserTable;

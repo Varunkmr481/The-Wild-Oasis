@@ -1,6 +1,6 @@
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
-import EmployeeTable from "../features/Employees/EmployeeTable";
+import UserTable from "../features/Users/UserTable";
 
 function Employees() {
   return (
@@ -10,7 +10,7 @@ function Employees() {
       </Row>
 
       <Row>
-        <EmployeeTable />
+        <UserTable />
       </Row>
     </>
   );
