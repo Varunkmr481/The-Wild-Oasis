@@ -11,3 +11,12 @@ export async function getUsers() {
 
   return data.users;
 }
+
+export async function deleteUser(userId) {
+  const { error } = await supabase.auth.admin.deleteUser(userId);
+
+  if (error) {
+    console.error(error);
+    throw new Error("User could not be deleted");
+  }
+}

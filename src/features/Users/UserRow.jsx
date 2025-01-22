@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import Table from "../../ui/Table";
-import { HiEllipsisVertical } from "react-icons/hi2";
+import { HiEllipsisVertical, HiTrash } from "react-icons/hi2";
 import { format } from "date-fns";
+import Menus from "../../ui/Menus";
+import useDeleteUser from "./useDeleteUser";
+import Modal from "../../ui/Modal";
 
 const StyledName = styled.div`
   font-size: 1.6rem;
@@ -21,10 +24,12 @@ const StyledEmail = styled.div`
 `;
 
 function UserRow({
-  user: { user_metadata, created_at, last_sign_in_at, email },
+  user: { id, user_metadata, created_at, last_sign_in_at, email },
 }) {
+  const { deleteUser, isDeleting } = useDeleteUser();
+  console.log(id);
+
   // console.log("user_metadata : ", user_metadata?.fullName);
-  // console.log(format(new Date(last_sign_in_at), "do MMMM yyyy"));
   // console.log(format(new Date(last_Sign_in_at), "do MMMM yyyy"));
 
   return (
@@ -41,9 +46,15 @@ function UserRow({
 
       <StyledEmail>{email}</StyledEmail>
 
-      <div>
-        <HiEllipsisVertical />
-      </div>
+      <Menus.Menu>
+        <Menus.Toggle id={id} />
+
+        <Menus.List id={id}>
+          <Menus.Button icon={<HiTrash />} onClick={() => deleteUser(id)}>
+            Delete User
+          </Menus.Button>
+        </Menus.List>
+      </Menus.Menu>
     </Table.Row>
   );
 }
